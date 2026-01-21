@@ -1,3 +1,4 @@
+
 describe("Be the Function Master", () => {
 
   // Function #1
@@ -17,11 +18,11 @@ describe("Be the Function Master", () => {
 
   // Function #2
   it('keysToString(): Should take an object and return its keys in a string separated by a space', () => {
-    var objectOne = { a: 'one', b: 'two '};
-    var objectTwo = { c: 'three', d: 'four', e: 'five' };
+    var objectOne = { firstName: 'Stephanie', lastName: 'Cooper' };
+    var objectTwo = { age: 38, city: 'New Orleans', state: 'Louisiana' };
 
-    assert.equal(keysToString(objectOne), "one two");
-    assert.equal(keysToString(objectTwo), "three four five");
+    assert.equal(keysToString(objectOne), "firstName lastName");
+    assert.equal(keysToString(objectTwo), "age city state");
   });
 
   // Function #3
@@ -35,7 +36,7 @@ describe("Be the Function Master", () => {
 
     var objectTwo = {
       firstName: 'Alex',
-      lastName: 'Francis',
+      middleName: 'Francis',
       lastName: 'Aaron'
     }
 
@@ -95,11 +96,11 @@ describe("Be the Function Master", () => {
   });
 
   // Function #12
-  it("isFriend() : Should take a name and an object and return true if <name> is a friend of <object> and false otherwise", () => {
+  it("isFriend(): Takes a name and an object and returns true if name is a friend of object", () => {
     assert.equal(isFriend("jimmy", { friends: ["bobby", "ralf"] }), false);
     assert.equal(isFriend("ralf", { friends: ["bobby", "ralf"] }), true);
     assert.equal(isFriend("chuck", {}), false);
-  });
+  })
 
   // Function #13
   it("nonFriends() : Should take a name and a list of people, and return a list of all the names that <name> is not friends with", () => {
@@ -115,7 +116,7 @@ describe("Be the Function Master", () => {
   });
 
   // Function #14
-  it("updateObject() : Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. If <key> does not exist on <object> create it.", () => {
+  it("updateObject() : Should take an object, a key and a value. Should update the property key on object with new value. If key does not exist on object create it.", () => {
     var objectOne = { a: "one", b: "two", hokey: false };
     assert.deepEqual(updateObject(objectOne, "b", "three"), {
       a: "one",
@@ -133,14 +134,14 @@ describe("Be the Function Master", () => {
   });
 
   // Function #15
-  it("removeProperties() : Should take an object and an array of strings. Should remove any properties on <object> that are listed in <array>", () => {
+  it("removeProperties() : Should take an object and an array of strings. Should remove any properties on object that are listed in array", () => {
     var objectOne = { a: "one", b: "two", hokey: false };
     removeProperties(objectOne, ["a", "hokey"]);
     assert.deepEqual(objectOne, { b: "two" });
 
     var objectTwo = { c: "three", d: "four "};
-    removeProperties(data, ["d"]);
-    assert.deepEqual(data, { c: "three" });
+    removeProperties(objectTwo, ["d"]);
+    assert.deepEqual(objectTwo, { c: "three" });
 
   });
 
