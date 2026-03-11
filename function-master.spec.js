@@ -2,7 +2,7 @@
 describe("Be the Function Master", () => {
 
   // Function #1
-  it("objectValues(): Should take an object and return its values in a string", () => {
+  it("objectValues(): Should take an object and return its values in an array", () => {
     var objectOne = {
       a: "one",
       b: "two",
